@@ -1,3 +1,10 @@
+/*
+ * Tech Blog
+ * controllers/api/index.js
+ * This script contains the necessary code to implement the /api/routes
+ * Copyright 2022 Leo Wong
+ */
+
 const router = require('express').Router();
 const blogRoutes = require('./blogRoutes');
 const blogTagRoutes = require('./blogTagRoutes');
@@ -7,7 +14,7 @@ const tagRoutes = require('./tagRoutes');
 const userRoutes = require('./userRoutes');
 
 router.use('/blog', blogRoutes);
-router.use('/blogTag', blogTagRoutes);
+router.use('/blogtag', blogTagRoutes);
 router.use('/category', categoryRoutes);
 router.use('/comment', commentRoutes);
 router.use('/tag', tagRoutes);
