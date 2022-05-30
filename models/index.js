@@ -46,4 +46,4 @@ Tag.belongsToMany(Blog, {
   foreignKey: 'tag_id',
 });
 
-module.exports = { User, Project, Comment };
+module.exports = { User, Blog, Comment, Tag, Category, BlogTag };
