@@ -38,49 +38,57 @@ const PORT = process.env.PORT || 3001;
 // set up Handlebars.js engine with  helper utilities
 const hbs = exphbs.create({ helpers });
 
-// define logic to set up each session
+// define session object
 const sess = {
-	secret: 'Super secret secret',
-	cookie: {
-		maxAge: 86400000 // 86,400,000 = 1 day
-	},
-	resave: false,
-	saveUninitialized: true,
-	// associate session store with Sequelize db
-	store: new SequelizeStore({
-		db: sequelize
-	})
+  // string to compute the hash
+  secret: 'Super secret secret',
+
+  // cookie to last the session
+  cookie: {
+    maxAge: 86400000, // 86,400,000 = 1 day
+  },
+
+  // for every request to the server, don't reset the session cookie
+  resave: false,
+
+  // at the end of the request, session object will be stored in the session store
+  saveUninitialized: true,
+
+  // store session object in sequelize
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 // function to start the application
 const init = () => {
-	// configure express
+  // configure express
 
-	// implement session
-	app.use(session(sess));
+  // implement session
+  app.use(session(sess));
 
-	// assign handlebars as Express engine
-	app.engine('handlebars', hbs.engine);
+  // assign handlebars as Express engine
+  app.engine('handlebars', hbs.engine);
 
-	// assign view engine as handlebars
-	app.set('view engine', 'handlebars');
+  // assign view engine as handlebars
+  app.set('view engine', 'handlebars');
 
-	// implement middleware that parses json
-	app.use(express.json());
+  // implement middleware that parses json
+  app.use(express.json());
 
-	// implement middleware that parses urlencoded bodies
-	app.use(express.urlencoded({ extended: true }));
+  // implement middleware that parses urlencoded bodies
+  app.use(express.urlencoded({ extended: true }));
 
-	// implement middleware that serves static files
-	app.use(express.static(path.join(__dirname, 'public')));
+  // implement middleware that serves static files
+  app.use(express.static(path.join(__dirname, 'public')));
 
-	// implement middleware that serves custom routes
-	app.use(routes);
+  // implement middleware that serves custom routes
+  app.use(routes);
 
-	// implement server
-	sequelize.sync({ force: false }).then(() => {
-		app.listen(PORT, () => console.log('Now listening'));
-	});
+  // implement server
+  sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
 };
 
 // start the application
