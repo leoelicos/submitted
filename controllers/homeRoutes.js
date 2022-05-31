@@ -9,6 +9,13 @@ const router = require('express').Router();
 const { Blog, BlogTag, Category, Comment, Tag, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+const getBlogTags = async (id) =>
+  BlogTag.findAll({
+    where: { blog_id: id },
+  });
+
+const getTag = async (id) => Tag.findOne({ where: { id: id } });
+
 router.get('/', async (req, res) => {
   try {
     const blogData = await Blog.findAll({
@@ -21,9 +28,27 @@ router.get('/', async (req, res) => {
         attributes: ['category_name'],
       },
     });
+
     const blogs = blogData.map((blog) => {
       return blog.get({ plain: true });
     });
+
+    for (let i = 0; i < blogs.length; i++) {
+      const blogTagsData = await getBlogTags(blogs[i].id);
+      blogs[i].blogtags = [];
+      for (let j = 0; j < blogTagsData.length; j++) {
+        const blogTag = blogTagsData[j].get({ plain: true });
+        console.log(blogTag);
+
+        const tagData = await getTag(blogTag.tag_id);
+        const tag = tagData.get({ plain: true });
+        blogs[i].blogtags.push(tag.tag_name);
+      }
+    }
+
+    for (let i = 0; i < blogs.length; i++) {
+      console.log(blogs[i].blogtags);
+    }
 
     res.render('homepage', {
       blogs,
