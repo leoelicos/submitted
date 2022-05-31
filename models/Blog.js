@@ -18,7 +18,7 @@ Blog.init(
       autoIncrement: true,
     },
     date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
     title: {
