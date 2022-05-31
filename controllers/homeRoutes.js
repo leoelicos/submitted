@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
       blogs[i].blogtags = [];
       for (let j = 0; j < blogTagsData.length; j++) {
         const blogTag = blogTagsData[j].get({ plain: true });
-        console.log(blogTag);
+        // console.log(blogTag);
 
         const tagData = await getTag(blogTag.tag_id);
         const tag = tagData.get({ plain: true });
@@ -47,7 +47,7 @@ router.get('/', async (req, res) => {
     }
 
     for (let i = 0; i < blogs.length; i++) {
-      console.log(blogs[i].blogtags);
+      // console.log(blogs[i].blogtags);
     }
 
     res.render('homepage', {
@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -105,7 +105,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/dashboard');
     return;
   }
 

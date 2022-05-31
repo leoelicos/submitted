@@ -111,3 +111,86 @@ main {
   color: var(--secondary);
   padding: 1rem 0;
 }
+
+/* login.handlebars */
+
+.login-container {
+  width: 300px;
+  border-radius: 1rem;
+  border: 1px solid var(--tertiary);
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.login-container.signup {
+  border-color: var(--secondary);
+}
+
+.login-message {
+  font-size: 12px;
+  color: var(--secondary);
+}
+
+.login-heading {
+  font-size: 20px;
+  color: var(--tertiary);
+  font-weight: 800;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.login-container fieldset {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.6rem 0;
+  border: none;
+}
+
+.login-container fieldset:focus-visible,
+.login-container fieldset:active {
+  outline: none;
+}
+
+.login-container fieldset input {
+  width: 100%;
+  margin-left: 0.6rem;
+  height: 30px;
+}
+
+.login-container fieldset input:focus-visible,
+.login-container fieldset input:active {
+  outline: none;
+}
+
+.login-label {
+  font-size: 12px;
+  color: var(--secondary);
+}
+
+.login-button {
+  font-size: 11px;
+  color: var(--primary);
+  background-color: var(--tertiary);
+  text-decoration: none;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  width: 100%;
+}
+
+.login-button:hover,
+.login-button:active,
+.login-button:focus-visible {
+  background-color: var(--secondary) !important;
+  outline: none;
+}
+
+.login-button:active {
+  transform: translateY(-1px);
+}
