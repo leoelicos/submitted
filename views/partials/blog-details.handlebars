@@ -2,8 +2,6 @@
       <p class="blog-date">{{format_date date}}</p>
       <p class="blog-title"><a href='/blog/{{id}}' >{{title}}</a></p>
       <p class="blog-category">Posted in: <span class="category-link">{{category.category_name}}</span></a></p> 
-      <p class="blog-tags">Tags: <span class="tag-link">{{#each blogtags as |blogtag|}}
-         {{blogtag}}
-         {{/each}}</span></a></p> 
+      <p class="blog-tags">Tags: {{#each blogtags as |blogtag|}}<span class="tag-link">{{blogtag}}</span>{{#unless @last}}, {{/unless}}{{/each}}</a></p> 
       <p class="blog-summary">{{summary}}</p>
   </div>
