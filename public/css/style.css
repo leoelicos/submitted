@@ -49,8 +49,11 @@ nav .link {
   padding: 0.6rem;
 }
 
-nav .active {
+nav .link:hover,
+nav .link:active,
+nav .link:focus-visible {
   background-color: var(--secondary) !important;
+  outline: none;
 }
 
 /* main */
