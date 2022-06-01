@@ -93,8 +93,35 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    const blogData = await Blog.findAll({
+      where: {
+        user_id: user.id,
+      },
+      include: {
+        model: Category,
+        attributes: ['category_name'],
+      },
+    });
+
+    const blogs = blogData.map((blog) => {
+      return blog.get({ plain: true });
+    });
+
+    for (let i = 0; i < blogs.length; i++) {
+      const blogTagsData = await getBlogTags(blogs[i].id);
+      blogs[i].blogtags = [];
+      for (let j = 0; j < blogTagsData.length; j++) {
+        const blogTag = blogTagsData[j].get({ plain: true });
+
+        const tagData = await getTag(blogTag.tag_id);
+        const tag = tagData.get({ plain: true });
+        blogs[i].blogtags.push(tag.tag_name);
+      }
+    }
+
     res.render('dashboard', {
       ...user,
+      blogs,
       logged_in: true,
     });
   } catch (err) {

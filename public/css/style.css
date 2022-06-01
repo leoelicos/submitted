@@ -110,6 +110,13 @@ main {
   font-size: 16px;
   color: var(--secondary);
   padding: 1rem 0;
+  font-weight: bold;
+}
+
+.blog-text {
+  font-size: 16px;
+  color: var(--secondary);
+  padding: 1rem 0;
 }
 
 /* login.handlebars */
@@ -141,13 +148,14 @@ main {
 .login-container form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .login-container fieldset {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   width: 100%;
   padding: 0.6rem 0;
   border: none;
@@ -158,14 +166,28 @@ main {
   outline: none;
 }
 
-.login-container fieldset input {
-  width: 100%;
+.login-container fieldset input,
+.login-container fieldset select,
+.login-container fieldset textarea {
+  width: 170px;
   margin-left: 0.6rem;
   height: 30px;
 }
 
-.login-container fieldset input:focus-visible,
-.login-container fieldset input:active {
+textarea {
+  height: 100px !important;
+}
+
+fieldset {
+  margin: 0 !important;
+}
+
+input:focus-visible,
+input:active,
+select:focus-visible,
+select:active,
+textarea:focus-visible,
+textarea:active {
   outline: none;
 }
 
@@ -193,4 +215,16 @@ main {
 
 .login-button:active {
   transform: translateY(-1px);
+}
+
+/* dashboard */
+h3 {
+  width: 100%;
+  text-align: center;
+  color: var(--tertiary);
+}
+
+.login-container.edit {
+  width: 100% !important;
+  margin: 0 !important;
 }
