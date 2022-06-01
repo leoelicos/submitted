@@ -110,7 +110,7 @@ const editBlogHandler = async (event) => {
 
   // insert form container before delete button
   const parentEl = event.target.parentNode;
-  const deleteButtonEl = event.target.parentNode.children[6];
+  const deleteButtonEl = event.target.parentNode.children[7];
   parentEl.insertBefore(formContainer, deleteButtonEl);
 
   // add event listener to form for save button
