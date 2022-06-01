@@ -42,21 +42,25 @@ router.put('/:id', withAuth, async (req, res) => {
 
     const databaseBlogTagIds = databaseBlogTags.map(({ tag_id }) => tag_id);
 
-    const newBlogTags = req.body.tagIds
-      .filter((tag_id) => databaseBlogTagIds.includes(tag_id))
-      .map((tag_id) => {
-        return { blog_id: req.params.id, tag_id };
-      });
+    let newBlogTags = [];
+    if (req.body.tagIds) {
+      newBlogTags = req.body.tagIds
+        .filter((tag_id) => databaseBlogTagIds.includes(tag_id))
+        .map((tag_id) => {
+          return { blog_id: req.params.id, tag_id };
+        });
+    }
 
-    const blogTagsToRemove = databaseBlogTags
-      .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
-      .map(({ id }) => id);
-
+    let blogTagsToRemove = [];
+    if (req.body.tagIds) {
+      blogTagsToRemove = databaseBlogTags
+        .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
+        .map(({ id }) => id);
+    }
     const updatedBlogTags = await Promise.all([
       BlogTag.destroy({ where: { id: blogTagsToRemove } }),
       BlogTag.bulkCreate(newBlogTags),
     ]);
-
     res.status(200).json(updatedBlogTags);
   } catch (err) {
     res.status(500).json(err);
