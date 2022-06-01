@@ -18,7 +18,7 @@ Comment.init(
       autoIncrement: true,
     },
     date_created: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
     text: {
