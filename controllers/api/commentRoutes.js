@@ -12,11 +12,8 @@ const { Comment, Blog } = require('../../models');
 
 router.get('/', async (req, res) => {
   // find all comments
-  // include its associated blogs
   try {
-    const commentData = await Comment.findAll({
-      include: [{ model: Blog }],
-    });
+    const commentData = await Comment.findAll();
     res.status(200).json(commentData);
   } catch (err) {
     res.status(500).json({ error: err });
@@ -27,9 +24,7 @@ router.get('/:id', async (req, res) => {
   // find one comment by its `id` value
   // be sure to include its associated blogs
   try {
-    const commentData = await Comment.findByPk(req.params.id, {
-      include: [{ model: Blog }],
-    });
+    const commentData = await Comment.findByPk(req.params.id);
     if (!commentData) {
       res.status(404).json({ message: 'No comments found with that id!' });
       return;
