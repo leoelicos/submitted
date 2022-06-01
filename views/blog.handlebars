@@ -1,5 +1,27 @@
-<div class='text-center'>
-
-  <p>Created by </p>
-
+<div class='blog' data-id="{{blog.id}}">
+{{> blog-details}}
+<p class="blog-text">{{text}}</p>
 </div>
+
+{{#if comments.length}}
+    <h3>Comments:</h3>
+    {{#each comments as |comment|}}
+        {{> comment-details}}
+    {{/each}}
+{{/if}}
+
+{{!-- leave a comment --}}
+
+<div class='login-container'>
+  <h3 class='login-message'>Leave a comment:</h3>
+  <form id='newComment' data-logged-in-user-id="{{loggedInUser.id}}">
+ 
+    <fieldset>
+      <label for='comment-text' class='login-label'>Comment:</label>
+      <textarea class='form-input' id='comment-text' name='comment-text'></textarea>
+    </fieldset>
+    <button type='submit' class='login-button'>Submit</button>
+  </form>
+</div>
+
+<script src='../js/blog.js'></script>

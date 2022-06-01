@@ -1,4 +1,6 @@
 <!-- Loop over each object in the blogs array -->
 {{#each blogs as |blog|}}
+<div class='blog' data-id="{{id}}">
 {{> blog-details}}
+</div>
 {{/each}}

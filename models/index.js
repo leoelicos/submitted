@@ -20,14 +20,6 @@ Blog.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-User.hasMany(Blog, {
-  foreignKey: 'user_id',
-});
-
-Blog.belongsTo(User, {
-  foreignKey: 'user_id',
-});
-
 Blog.belongsTo(Category, {
   foreignKey: 'category_id',
 });
@@ -44,6 +36,14 @@ Blog.belongsToMany(Tag, {
 Tag.belongsToMany(Blog, {
   through: BlogTag,
   foreignKey: 'tag_id',
+});
+
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
 });
 
 module.exports = { User, Blog, Comment, Tag, Category, BlogTag };

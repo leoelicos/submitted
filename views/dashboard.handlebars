@@ -24,11 +24,7 @@
     <h3>Your Blogs:</h3>
     {{#each blogs as |blog|}}
     <div class='blog' data-id="{{blog.id}}">
-        <p class="blog-date">{{format_date date}}</p>
-        <p class="blog-title"><a href='/blog/{{id}}' >{{title}}</a></p>
-        <p class="blog-category">Posted in: <span class="category-link">{{category.category_name}}</span></a></p> 
-        <p class="blog-tags">Tags: {{#each blogtags as |blogtag|}}<span class="tag-link">{{blogtag}}</span>{{#unless @last}}, {{/unless}}{{/each}}</a></p> 
-        <p class="blog-summary">{{summary}}</p>
+       {{> blog-details}}
         <p class="blog-text">{{text}}</p>
       <button class="login-button edit-button" data-id='{{blog.id}}' >EDIT</button>
       <button class="login-button delete-button" data-id='{{blog.id}}' >DELETE</button>
