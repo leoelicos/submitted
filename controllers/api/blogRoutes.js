@@ -6,8 +6,30 @@
  */
 
 const router = require('express').Router();
-const { Blog, Comment, BlogTag } = require('../../models');
+const { Blog, User, Comment, BlogTag } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+router.get('/', async (req, res) => {
+  // find all blogs
+
+  try {
+    const blogData = await Blog.findAll();
+    res.status(200).json(blogData);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  // find all blogs with id
+
+  try {
+    const blogData = await Blog.findByPk(req.params.id);
+    res.status(200).json(blogData);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+});
 
 router.post('/', withAuth, async (req, res) => {
   try {
