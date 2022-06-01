@@ -8,7 +8,7 @@
 
 ---
 
-## Introduction
+## Description
 
 Tech Blog is a full stack application that allows
 logged-in contributors to view Blogs, create Blogs, edit and delete their own Blogs, comment on other contributor's blogs.
@@ -21,6 +21,17 @@ As defined in [Issues](https://github.com/leoelicos/bcs-14-tech-blog/issues), my
 
 I made this application to learn about full-stack applications created with Model-View-Controller, and I used GitHub Projects and various Pull Requests to create this app: https://github.com/leoelicos/bcs-14-tech-blog/projects/1
 
+## Table of Contents (Optional)
+
+If your README is long, add a table of contents to make it easy for users to find what they need.
+
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Installation for API testing in Insomnia](#installation-for-api-testing-in-insomnia)
+- [Example of API response](#example-of-api-response)
+- [Credits](#credits)
+- [License](#license)
+
 ## Usage
 
 Visit [Tech Blog](https://leoelicos-tech-blog.herokuapp.com/) on a browser on a computer or mobile.
@@ -29,7 +40,7 @@ Visit [Tech Blog](https://leoelicos-tech-blog.herokuapp.com/) on a browser on a 
 
 https://user-images.githubusercontent.com/99461390/171432484-b0d20930-92b8-4f02-bcb3-d773507a1ed9.mp4
 
-## Screenshots - Front End
+## Screenshots
 
 ### Screenshot: Tech Blog Homepage
 
@@ -43,7 +54,7 @@ https://user-images.githubusercontent.com/99461390/171432484-b0d20930-92b8-4f02-
 
 ![Screenshot: Tech Blog Login](https://user-images.githubusercontent.com/99461390/171438328-941e8bf3-d929-42d9-854b-82c66c726d18.jpg)
 
-## Test in Insomnia
+## Installation for API testing in Insomnia
 
 ### 0. Required
 
