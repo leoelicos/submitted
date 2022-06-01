@@ -21,9 +21,7 @@ As defined in [Issues](https://github.com/leoelicos/bcs-14-tech-blog/issues), my
 
 I made this application to learn about full-stack applications created with Model-View-Controller, and I used GitHub Projects and various Pull Requests to create this app: https://github.com/leoelicos/bcs-14-tech-blog/projects/1
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Usage](#usage)
 - [Screenshots](#screenshots)
@@ -39,6 +37,8 @@ Visit [Tech Blog](https://leoelicos-tech-blog.herokuapp.com/) on a browser on a 
 ### Video Demo:
 
 https://user-images.githubusercontent.com/99461390/171432484-b0d20930-92b8-4f02-bcb3-d773507a1ed9.mp4
+
+Video is also on YouTube: https://youtu.be/E2-GN5ZVDKY
 
 ## Screenshots
 
