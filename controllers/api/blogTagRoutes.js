@@ -36,7 +36,6 @@ router.post('/', async (req, res) => {
     // if no product tags, just respond
     res.status(200).json(blogTagData);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -56,7 +55,6 @@ router.put('/:id', async (req, res) => {
 
     res.json(blogTagData);
   } catch (err) {
-    // console.log(err);
     res.status(400).json(err);
   }
 });
