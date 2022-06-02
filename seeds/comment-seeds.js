@@ -10,77 +10,77 @@ const commentData = [
   {
     text: 'Pretty good blog post',
     user_id: 1,
-    blog_id: 1,
-  },
-  {
-    text: 'Pretty good blog post',
-    user_id: 2,
     blog_id: 2,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 3,
+    user_id: 2,
     blog_id: 3,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 4,
+    user_id: 3,
     blog_id: 4,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 5,
+    user_id: 4,
     blog_id: 5,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 6,
+    user_id: 5,
     blog_id: 6,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 7,
+    user_id: 6,
     blog_id: 7,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 8,
+    user_id: 7,
     blog_id: 8,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 9,
+    user_id: 8,
     blog_id: 9,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 10,
+    user_id: 9,
     blog_id: 10,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 11,
+    user_id: 10,
     blog_id: 11,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 12,
+    user_id: 11,
     blog_id: 12,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 13,
+    user_id: 12,
     blog_id: 13,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 14,
+    user_id: 13,
     blog_id: 14,
   },
   {
     text: 'Pretty good blog post',
-    user_id: 15,
+    user_id: 14,
     blog_id: 15,
+  },
+  {
+    text: 'Pretty good blog post',
+    user_id: 15,
+    blog_id: 1,
   },
 ];
 
