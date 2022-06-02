@@ -89,7 +89,7 @@ router.put('/:id', withAuth, async (req, res) => {
     // Sequelize API to update a blog
     const blogData = await Blog.update(body, { where: { id: blogId } });
 
-    // If the id exists, respond with message and status NOT FOUND
+    // If the blog doesn't exist, respond with message and status NOT FOUND
     if (!blogData) {
       res.status(NOT_FOUND).json({ message: 'No blog found with this id!' });
       return;
@@ -135,10 +135,12 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Route handler to delete a blog by its id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     // check if blog with this id exists
     const blog = await Blog.findByPk(req.params.id);
+
     if (!blog) {
       res.status(404).json({ message: 'No blog found with this id!' });
       return;
