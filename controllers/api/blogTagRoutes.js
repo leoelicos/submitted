@@ -63,7 +63,11 @@ router.get('/:id', async (req, res) => {
 // Route handler to add a blogtag
 router.post('/', async (req, res) => {
   try {
-    const blogTagData = await BlogTag.create(req.body);
+    // Get parameters from req
+    const body = req.body;
+
+    // Sequelize API to create a blog
+    const blogTagData = await BlogTag.create(body);
 
     // if no product tags, just respond
     res.status(OK).json(blogTagData);
