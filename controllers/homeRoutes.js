@@ -51,15 +51,11 @@ router.get('/', async (req, res) => {
       blogs[i].blogtags = [];
       for (let j = 0; j < blogTagsData.length; j++) {
         const blogTag = blogTagsData[j].get({ plain: true });
-        // console.log(blogTag);
-
         const tagData = await getTag(blogTag.tag_id);
         const tag = tagData.get({ plain: true });
         blogs[i].blogtags.push(tag.tag_name);
       }
     }
-
-    console.log('blogs = ', blogs);
 
     res.render('homepage', {
       blogs,
@@ -108,14 +104,11 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     // get comments
     const commentsData = await getComments(blog.id);
 
-    console.log('commentData = ', commentsData);
-
     const comments = commentsData.map((commentData) =>
       commentData.get({ plain: true })
     );
 
     comments.notEmpty = comments.length;
-    console.log('The comments are ', comments);
 
     res.render('blog', {
       ...blog,
