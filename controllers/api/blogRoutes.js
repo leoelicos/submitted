@@ -91,8 +91,6 @@ router.put('/:id', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    console.log('id = ', req.params.id);
-
     // check if blog with this id exists
     const blog = await Blog.findByPk(req.params.id);
     if (!blog) {
@@ -106,13 +104,12 @@ router.delete('/:id', withAuth, async (req, res) => {
 
     const blogTagsToRemove = databaseBlogTags.map(({ tag_id }) => tag_id);
 
-    console.log(`blogTagsToRemove = `, blogTagsToRemove);
     const databaseComments = await Comment.findAll({
       where: { blog_id: req.params.id },
     });
 
     const commentsToRemove = databaseComments.map(({ blog_id }) => blog_id);
-    console.log(`commentsToRemove = `, commentsToRemove);
+
     const updatedBlogTags = await Promise.all([
       Blog.destroy({ where: { id: req.params.id } }),
       BlogTag.destroy({ where: { id: blogTagsToRemove } }),
