@@ -17,28 +17,51 @@ const BAD_REQUEST = 400;
 const NOT_FOUND = 404;
 const INTERNAL_SERVER_ERROR = 500;
 
+// Route handler to get all blog tags
 router.get('/', async (req, res) => {
   try {
-    const blogTagData = await BlogTag.findAll({
+    // Sequelize API to find all blogtags
+    const blogTagsData = await BlogTag.findAll({
       order: [['tag_id', 'ASC']],
     });
-    res.status(OK).json(blogTagData);
+
+    // Serialize each iteration
+    const blogTags = blogTagsData.map((blogTagData) =>
+      blogTagData.get({ plain: true })
+    );
+
+    // Respond with blogTags and status OK
+    res.status(OK).json(blogTags);
+
+    // Respond with any error and status INTERNAL SERVER ERROR
   } catch (err) {
     res.status(INTERNAL_SERVER_ERROR).json(err);
   }
 });
 
+// Route handler to get specific blogtag with id
 router.get('/:id', async (req, res) => {
   try {
-    const blogTagData = await BlogTag.findByPk(req.params.id);
-    res.status(OK).json(blogTagData);
+    // get param from req
+    const blogTagId = req.params.id;
+
+    // Sequelize API to find blogTag by primary key
+    const blogTagData = await BlogTag.findByPk(blogTagId);
+
+    // Serialize the blogData
+    const blogTag = blogTagData.get({ plain: true });
+
+    // Respond with blogTag and status OK
+    res.status(OK).json(blogTag);
+
+    // Respond with any error and status INTERNAL SERVER ERROR
   } catch (err) {
     res.status(INTERNAL_SERVER_ERROR).json(err);
   }
 });
 
+// Route handler to add a blogtag
 router.post('/', async (req, res) => {
-  // create a new blogTag
   try {
     const blogTagData = await BlogTag.create(req.body);
 
@@ -49,11 +72,9 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Route handler to edit a blogtag
 router.put('/:id', async (req, res) => {
-  // update a blogTag by its `id` value
   try {
-    /* update BlogTag
-     */
     const blogTagData = await BlogTag.update(req.body, {
       where: { id: req.params.id },
     });
@@ -70,8 +91,8 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// Route handler to delete a blogtag by its id
 router.delete('/:id', async (req, res) => {
-  // delete a blogTag by its `id` value
   try {
     const blogTagData = await BlogTag.destroy({
       where: { id: req.params.id },
