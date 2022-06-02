@@ -1,3 +1,16 @@
+/*
+ * Tech Blog
+ * style.css
+ * This sheet contains the necessary code to style the following handlebars
+    * layouts/main.handlebars
+    * homepage.handlebars
+    * login.handlebars
+    * dashboard.handlebars
+    * partials/blog-details.handlebars
+    * partials/comment-details.handlebars
+ * Copyright 2022 Leo Wong 
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
 /* main.handlebars */
@@ -72,6 +85,8 @@ main {
   padding: 1rem;
   margin: 1rem;
 }
+
+/* blog-details.handlebars */
 .blog-date {
   font-size: 12px;
 
@@ -125,7 +140,7 @@ main {
   padding: 0.3rem 0;
 }
 
-/* login.handlebars */
+/* login.handlebars and reused in blog.handlebars */
 
 .login-container {
   width: 300px;
@@ -223,7 +238,7 @@ textarea:active {
   transform: translateY(-1px);
 }
 
-/* dashboard */
+/* dashboard.handlebars */
 h3 {
   width: 100%;
   text-align: center;
@@ -235,7 +250,7 @@ h3 {
   margin: 0 !important;
 }
 
-/* comments */
+/* comment-details.handlebars */
 .comment-date {
   font-size: 12px;
 
