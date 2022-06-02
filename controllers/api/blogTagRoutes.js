@@ -5,26 +5,35 @@
  * Copyright 2022 Leo Wong
  */
 
+// import express router
 const router = require('express').Router();
+
+// import model required in blogTag routes
 const { BlogTag } = require('../../models');
+
+// define HTTP Response Status Codes
+const OK = 200;
+const BAD_REQUEST = 400;
+const NOT_FOUND = 404;
+const INTERNAL_SERVER_ERROR = 500;
 
 router.get('/', async (req, res) => {
   try {
     const blogTagData = await BlogTag.findAll({
       order: [['tag_id', 'ASC']],
     });
-    res.status(200).json(blogTagData);
+    res.status(OK).json(blogTagData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(INTERNAL_SERVER_ERROR).json(err);
   }
 });
 
 router.get('/:id', async (req, res) => {
   try {
     const blogTagData = await BlogTag.findByPk(req.params.id);
-    res.status(200).json(blogTagData);
+    res.status(OK).json(blogTagData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(INTERNAL_SERVER_ERROR).json(err);
   }
 });
 
@@ -34,9 +43,9 @@ router.post('/', async (req, res) => {
     const blogTagData = await BlogTag.create(req.body);
 
     // if no product tags, just respond
-    res.status(200).json(blogTagData);
+    res.status(OK).json(blogTagData);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(BAD_REQUEST).json(err);
   }
 });
 
@@ -49,13 +58,15 @@ router.put('/:id', async (req, res) => {
       where: { id: req.params.id },
     });
     if (!blogTagData) {
-      res.status(404).json({ message: 'No blogTags found with that id!' });
+      res
+        .status(NOT_FOUND)
+        .json({ message: 'No blogTags found with that id!' });
       return;
     }
 
     res.json(blogTagData);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(BAD_REQUEST).json(err);
   }
 });
 
@@ -67,13 +78,15 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!blogTagData) {
-      res.status(404).json({ message: 'No blogTags found with that id!' });
+      res
+        .status(NOT_FOUND)
+        .json({ message: 'No blogTags found with that id!' });
       return;
     }
 
-    res.status(200).json(blogTagData);
+    res.status(OK).json(blogTagData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(INTERNAL_SERVER_ERROR).json(err);
   }
 });
 
