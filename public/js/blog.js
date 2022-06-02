@@ -8,8 +8,6 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-  console.log('hello');
-
   const text = document.querySelector('#comment-text').value.trim();
   const userId = event.target.dataset.loggedInUserId; // wrong
   const blogId = document.location.href.split('/')[4].split('?')[0];
