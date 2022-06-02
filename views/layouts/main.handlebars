@@ -1,21 +1,44 @@
+{{!  
+  * Tech Blog
+  * main.handlebars
+  * Contains the markup for the Header, which includes the headings and navigation links
+  * Contains a template literal to include other handlebars
+  * Copyright 2022 Leo Wong
+}}
+
 <html lang='en'>
+  {{! HEAD }}
   <head>
+    {{! UTF-8 character set covers most characters and symbols }}
     <meta charset='UTF-8' />
+    {{! Choose Edge as Internet Explorer version }}
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    {{! Control layout on mobile browsers }}
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    {{! Tech Blog Title }}
     <title>Submitted!</title>
+    {{! Tech Blog Favicon }}
     <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
+    {{! CSS Normalize }}
     <link rel='stylesheet' href='/css/normalize.css' />
+    {{! Custom CSS for all of the pages }}
     <link rel='stylesheet' href='/css/style.css' />
   </head>
 
+  {{! BODY }}
   <body>
+    {{! HEADER }}
     <header>
+      {{! HEADING }}
       <h1>Submitted!</h1>
       <h2>The Bootcamp Student Blog</h2>
+      {{! Navigation links }}
       <nav>
+        {{! Link to home page }}
         <a href='/' class='link homepage'>Homepage</a>
+        {{! Link to dashboard }}
         <a href='/dashboard' class='link dashboard'>Dashboard</a>
+        {{! Conditionally render either 'Logout' or 'Login' }}
         {{#if logged_in}}
           <button class='link logout' id='logout'>Logout</button>
         {{else}}
@@ -23,10 +46,13 @@
         {{/if}}
       </nav>
     </header>
+
+    {{! MAIN }}
     <main>
+      {{! Literal to insert other handlebars }}
       {{{body}}}
     </main>
-
+    {{! Conditionally render 'Logout' if already logged in }}
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
     {{/if}}

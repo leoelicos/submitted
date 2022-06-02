@@ -1,35 +1,62 @@
+{{!  
+  * Tech Blog
+  * dashboard.handlebars
+  * Contains markup for rendering a specific user's blogs
+  * Contains a form for creating a new blog
+  * Contains a form for editing existing blogs
+  * Contains functionality for deleting existing blogs
+  * Copyright 2022 Leo Wong
+}}
+
+{{!-- Welcome user to the dashboard --}}
 <div class='login-container'>
   <h2 class='login-heading'>Welcome, {{username}}!</h2>
 </div>
+
+{{!-- Form to create a new blog --}}
 <div class='login-container'>
   <h3 class='login-message'>Create a New Blog:</h3>
   <form id='newBlog' data-user="{{id}}">
+    {{!-- Input element for blog title --}}
     <fieldset>
       <label for='blog-title' class='login-label'>Title:</label>
       <input class='form-input' id='blog-title' name='blog-funding' />
     </fieldset>
+
+    {{!-- Input element for blog summary --}}
     <fieldset>
       <label for='blog-summary' class='login-label'>Summary:</label>
       <textarea class='form-input' id='blog-summary' name='blog-summary'></textarea>
     </fieldset>
+
+    {{!-- Input element for blog text --}}
     <fieldset>
       <label for='blog-text' class='login-label'>Text:</label>
       <textarea class='form-input' id='blog-text' name='blog-text'></textarea>
     </fieldset>
+
+    {{!-- Button to submit form --}}
     <button type='submit' class='login-button'>Create</button>
   </form>
 </div>
 
-{{#if blogs.length}}
-    <h3>Your Blogs:</h3>
-    {{#each blogs as |blog|}}
+{{!-- Area to render a user's blogs --}}
+<h3>Your Blogs:</h3>
+{{!-- Conditionally render blogs if there are any --}}
+{{#if blogs.notEmpty}}
+  {{#each blogs as |blog|}}
     <div class='blog' data-id="{{blog.id}}">
-       {{> blog-details}}
-        <p class="blog-text">{{text}}</p>
+      {{> blog-details}}
+      <p class="blog-text">{{text}}</p>
       <button class="login-button edit-button" data-id='{{blog.id}}' >EDIT</button>
       <button class="login-button delete-button" data-id='{{blog.id}}' >DELETE</button>
     </div>
-    {{/each}}
+  {{/each}}
+{{!-- if not, display a short message to say so --}}
+{{else}}
+  <div class='blog'>
+    <p style='color: white'>No blogs yet.</p>
+  </div>
 {{/if}}
 
 <script src='./js/dashboard.js'></script>

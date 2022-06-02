@@ -1,4 +1,9 @@
-/* Copied from BCS */
+/*
+ * Tech Blog
+ * login.js
+ * This script contains the necessary code to allow user to log in, or a new user to sign up
+ * Adapted from BCS resources 2022
+ */
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
@@ -19,13 +24,12 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the dashboard
       document.location.replace('/dashboard');
     } else {
-      alert('Please check your username and password');
+      window.alert('Please check your username and password');
     }
   }
 };
 
 const signupFormHandler = async (event) => {
-  console.log('signup');
   event.preventDefault();
 
   const username = document.querySelector('#username-signup').value.trim();
@@ -41,7 +45,9 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      window.alert("Couldn't sign up. Please try again.");
+      window.alert(
+        "Couldn't sign up. Please check password is at least 8 characters and try again."
+      );
     }
   }
 };
