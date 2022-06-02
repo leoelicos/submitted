@@ -13,10 +13,6 @@ const newBlogHandler = async (event) => {
   const text = document.querySelector('#blog-text').value.trim();
 
   const id = event.target.dataset.user;
-  console.log(`title = `, title);
-  console.log(`summary = `, summary);
-  console.log(`text = `, text);
-  console.log(`id = `, id);
 
   if (title && summary && text && id) {
     const response = await fetch(`/api/blog`, {
@@ -129,9 +125,6 @@ async function editBlogFetch(blogId, event) {
   title = event.target.children[0].children[1].value;
   summary = event.target.children[1].children[1].value;
   text = event.target.children[2].children[1].value;
-  console.log(
-    `blogId = ${blogId}, title = ${title}, summary = ${summary}, text = ${text}`
-  );
   const response = await fetch(`/api/blog/${blogId}`, {
     method: 'PUT',
     body: JSON.stringify({
