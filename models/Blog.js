@@ -30,9 +30,8 @@ Blog.init(
       allowNull: false,
     },
     text: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT('long'),
       allowNull: false,
-      defaultValue: '',
     },
     category_id: {
       type: DataTypes.INTEGER,
