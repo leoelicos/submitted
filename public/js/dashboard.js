@@ -1,3 +1,10 @@
+/*
+ * Tech Blog
+ * dashboard.js
+ * This script contains the necessary code to allow a user to add a new blog, edit an existing blog they own, or delete an existing blog they own
+ * Copyright 2022 Leo Wong
+ */
+
 const newBlogHandler = async (event) => {
   event.preventDefault();
 
@@ -136,7 +143,6 @@ async function editBlogFetch(blogId, event) {
       'Content-Type': 'application/json',
     },
   });
-  console.log('Response = ', response);
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
