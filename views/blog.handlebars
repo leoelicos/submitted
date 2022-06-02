@@ -1,25 +1,51 @@
+{{!  
+  * Tech Blog
+  * blog.handlebars
+  * Contains the markup for rendering a specific blog
+  * Contains a template literal 'comment-details' used to include other comments as partials
+  * Contains a form to leave a comment
+  * Copyright 2022 Leo Wong
+}}
+
+{{!-- Container for the specific blog --}}
 <div class='blog' data-id="{{blog.id}}">
-{{> blog-details}}
-<p class="blog-text">{{text}}</p>
+
+  {{!-- Partial for this blog's details --}}
+  {{> blog-details}}
+
+  {{!-- The blog text in its entirety --}}
+  <p class="blog-text">{{text}}</p>
 </div>
 
-{{#if comments.length}}
-    <h3>Comments:</h3>
-    {{#each comments as |comment|}}
-        {{> comment-details}}
-    {{/each}}
+{{!-- Conditionally render comments in a partial if there are any --}}
+<h3>Comments:</h3>
+{{#if comments.notEmpty}}
+  {{#each comments as |comment|}}
+    {{> comment-details}}
+  {{/each}}
+{{!-- if not, display a short message to say so --}}
+{{else}}
+  <div class='comment' >
+    <p style='color: white'>No comments yet.</p>
+  </div>
 {{/if}}
 
-{{!-- leave a comment --}}
-
+{{!-- Container --}}
 <div class='login-container'>
+
+  {{!-- Container --}}
   <h3 class='login-message'>Leave a comment:</h3>
+  
+  {{!-- Form to leave a comment --}}
   <form id='newComment' data-logged-in-user-id="{{loggedInUser.id}}">
- 
+
+    {{!-- Input to leave a comment --}}
     <fieldset>
       <label for='comment-text' class='login-label'>Comment:</label>
       <textarea class='form-input' id='comment-text' name='comment-text'></textarea>
     </fieldset>
+
+    {{!-- Button to submit form --}}
     <button type='submit' class='login-button'>Submit</button>
   </form>
 </div>
