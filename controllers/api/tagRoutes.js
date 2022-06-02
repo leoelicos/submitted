@@ -75,7 +75,6 @@ router.post('/', async (req, res) => {
     // if no blog tags, just respond
     res.status(200).json(tag);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
