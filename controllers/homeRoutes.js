@@ -44,6 +44,8 @@ router.get('/', async (req, res) => {
       return blog.get({ plain: true });
     });
 
+    blogs.notEmpty = blogs.length;
+
     for (let i = 0; i < blogs.length; i++) {
       const blogTagsData = await getBlogTags(blogs[i].id);
       blogs[i].blogtags = [];
@@ -112,6 +114,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
       commentData.get({ plain: true })
     );
 
+    comments.notEmpty = comments.length;
     console.log('The comments are ', comments);
 
     res.render('blog', {
@@ -155,6 +158,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const blogs = blogData.map((blog) => {
       return blog.get({ plain: true });
     });
+
+    blogs.notEmpty = blogs.length;
 
     for (let i = 0; i < blogs.length; i++) {
       const blogTagsData = await getBlogTags(blogs[i].id);
