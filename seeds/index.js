@@ -15,9 +15,8 @@ const seedUsers = require('./user-seeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-  // start database
+  // sync database
   await sequelize.sync({ force: true });
-  console.log('\n----- DATABASE SYNCED -----\n');
 
   // seed categories
   await seedCategories();
