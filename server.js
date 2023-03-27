@@ -4,8 +4,8 @@
  * This script contains the necessary code to initiate the application
  * Copyright 2022 Leo Wong
  */
-const config = require('dotenv');
-config();
+require('dotenv').config();
+
 // import utility for working with file and directory paths
 const path = require('path');
 
