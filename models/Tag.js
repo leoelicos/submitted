@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * models/Tag.js
  * This script contains the necessary code to define the Tag entity
  * Copyright 2022 Leo Wong

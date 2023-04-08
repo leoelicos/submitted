@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * seeds/user-seeds.js
  * This script contains the seeds for the User entity
  * Copyright 2022 Leo Wong

@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/api/blogTagRoutes.js
  * This script contains the necessary code to implement the /api/blogtag routes
  * Copyright 2022 Leo Wong

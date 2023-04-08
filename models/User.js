@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * models/User.js
  * This script contains the necessary code to define the User entity
  * Copyright 2022 Leo Wong

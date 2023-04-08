@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * server.js
  * This script contains the necessary code to initiate the application
  * Copyright 2022 Leo Wong

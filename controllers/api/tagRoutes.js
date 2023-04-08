@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/api/tagRoutes.js
  * This script contains the necessary code to implement the /api/tag routes
  * Copyright 2022 Leo Wong

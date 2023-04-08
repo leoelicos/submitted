@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * blog.js
  * This script contains the necessary code to allow a user to add a new comment to an existing blog post
  * Copyright 2022 Leo Wong

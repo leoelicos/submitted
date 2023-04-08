@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * models/Blog.js
  * This script contains the necessary code to define the Blog entity
  * Copyright 2022 Leo Wong

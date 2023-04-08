@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * blogRoutes.js
  * Defines '/api/blog' CRUD requests
  * Copyright 2022 Leo Wong

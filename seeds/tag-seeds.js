@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * seeds/tag-seeds.js
  * This script contains the seeds for the Tag entity
  * Copyright 2022 Leo Wong

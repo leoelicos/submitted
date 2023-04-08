@@ -1,5 +1,5 @@
 /*
- * Tech BlogTag
+ * SubmittedTag
  * models/Blog.js
  * This script contains the necessary code to define the BlogTag entity
  * Copyright 2022 Leo Wong

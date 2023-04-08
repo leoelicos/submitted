@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * seeds/category-seeds.js
  * This script contains the seeds for the Category entity
  * Copyright 2022 Leo Wong

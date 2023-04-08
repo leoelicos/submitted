@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * seeds/comment-seeds.js
  * This script contains the seeds for the Comment entity
  * Copyright 2022 Leo Wong

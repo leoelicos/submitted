@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/api/index.js
  * This script contains the necessary code to implement the /api/user routes
  * Copyright 2022 2U

@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * dashboard.js
  * This script contains the necessary code to allow a user to add a new blog, edit an existing blog they own, or delete an existing blog they own
  * Copyright 2022 Leo Wong

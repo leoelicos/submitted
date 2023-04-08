@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/index.js
  * This script contains the necessary code to delegate the '/' routes and the '/api/' routes
  * Copyright 2022 Leo Wong

@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/homeRoutes.js
  * This script contains the necessary code to define the / routes
  * Copyright 2022 Leo Wong

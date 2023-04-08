@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * seeds/index.js
  * This script contains the necessary code to coordinate the seeds
  * Copyright 2022 Leo Wong

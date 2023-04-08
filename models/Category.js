@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * models/Category.js
  * This script contains the necessary code to define the Category entity
  * Copyright 2022 Leo Wong

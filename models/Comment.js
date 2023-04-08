@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * models/Comment.js
  * This script contains the necessary code to define the Comment entity
  * Copyright 2022 Leo Wong

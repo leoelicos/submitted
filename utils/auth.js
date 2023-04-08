@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * utils/auth.js
  * This script contains a custom middleware function which redirects a user to the login page if they are not logged in to the session
  * Copyright 2022 Leo Wong

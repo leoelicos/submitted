@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * utils/helpers.js
  * This script contains a function which formats a UNIX date into a string with weekday, year, month and day
  * Copyright 2022 Leo Wong

@@ -1,5 +1,5 @@
 {
-  "name": "tech-blog",
+  "name": "submitted",
   "version": "1.0.0",
   "description": "A CMS-style blog site where users can post articles",
   "main": "server.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leoelicos/bcs-14-tech-blog.git"
+    "url": "git+https://github.com/leoelicos/submitted.git"
   },
   "keywords": [
     "MVC",
@@ -22,9 +22,9 @@
   "author": "Leo Wong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leoelicos/bcs-14-tech-blog/issues"
+    "url": "https://github.com/leoelicos/submitted/issues"
   },
-  "homepage": "https://github.com/leoelicos/bcs-14-tech-blog#readme",
+  "homepage": "https://github.com/leoelicos/submitted#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.3",

@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/api/categoryRoutes.js
  * This script contains the necessary code to implement the /api/category routes
  * Copyright 2022 Leo Wong

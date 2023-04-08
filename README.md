@@ -1,4 +1,4 @@
-# Tech Blog
+# submitted
 
 ![express](https://img.shields.io/badge/4.18.1-0?label=Express&style=for-the-badge&labelColor=white&color=black) ![express-handlebars](https://img.shields.io/badge/6.0.6-0?label=express-handlebars&style=for-the-badge&labelColor=white&color=black) ![express-session](https://img.shields.io/badge/1.17.3-0?label=express-session&style=for-the-badge&labelColor=white&color=black)
 
@@ -10,16 +10,16 @@
 
 ## Description
 
-Tech Blog is a full stack application that allows
+submitted is a full stack application that allows
 logged-in contributors to view Blogs, create Blogs, edit and delete their own Blogs, comment on other contributor's blogs.
 
 This application uses npm packages `express`, `express-handlebars`, `express-session`, `sequelize`, `connection-session-sequelize`, `bcrypt`, `mysql2` and `dotenv`.
 
 CRUD API calls are also defined for back end development allow a developer to test requests using Insomnia to prepare for front-end integration in the future.
 
-As defined in [Issues](https://github.com/leoelicos/bcs-14-tech-blog/issues), my future direction for Tech Blog includes options to create Categories and Tags on the front end, as well as select them while creating a Blog. Currently they can only be created from the back end.
+As defined in [Issues](https://github.com/leoelicos/submitted/issues), my future direction for submitted includes options to create Categories and Tags on the front end, as well as select them while creating a Blog. Currently they can only be created from the back end.
 
-I made this application to learn about full-stack applications created with Model-View-Controller, and I used GitHub Projects and various Pull Requests to create this app: https://github.com/leoelicos/bcs-14-tech-blog/projects/1
+I made this application to learn about full-stack applications created with Model-View-Controller, and I used GitHub Projects and various Pull Requests to create this app: https://github.com/leoelicos/submitted/projects/1
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ I made this application to learn about full-stack applications created with Mode
 
 ## Usage
 
-Visit [Tech Blog](https://leoelicos-tech-blog.herokuapp.com/) on a browser on a computer or mobile.
+Visit [submitted](https://leoelicos-tech-blog.herokuapp.com/) on a browser on a computer or mobile.
 
 ### Video Demo:
 
@@ -42,17 +42,17 @@ Video is also on YouTube: https://youtu.be/E2-GN5ZVDKY
 
 ## Screenshots
 
-### Screenshot: Tech Blog Homepage
+### Screenshot: submitted Homepage
 
-![Screenshot: Tech Blog Homepage](https://user-images.githubusercontent.com/99461390/171438307-e5865051-f739-4fd2-b2cd-1b5caa0095ef.jpg)
+![Screenshot: submitted Homepage](https://user-images.githubusercontent.com/99461390/171438307-e5865051-f739-4fd2-b2cd-1b5caa0095ef.jpg)
 
-### Screenshot: Tech Blog Dashboard
+### Screenshot: submitted Dashboard
 
-![Screenshot: Tech Blog Dashboard](https://user-images.githubusercontent.com/99461390/171438325-6877551d-5875-4637-afe1-ac88fab85520.jpg)
+![Screenshot: submitted Dashboard](https://user-images.githubusercontent.com/99461390/171438325-6877551d-5875-4637-afe1-ac88fab85520.jpg)
 
-### Screenshot: Tech Blog Login
+### Screenshot: submitted Login
 
-![Screenshot: Tech Blog Login](https://user-images.githubusercontent.com/99461390/171438328-941e8bf3-d929-42d9-854b-82c66c726d18.jpg)
+![Screenshot: submitted Login](https://user-images.githubusercontent.com/99461390/171438328-941e8bf3-d929-42d9-854b-82c66c726d18.jpg)
 
 ## Installation for API testing in Insomnia
 
@@ -67,9 +67,9 @@ Video is also on YouTube: https://youtu.be/E2-GN5ZVDKY
 ### 1. Git clone and go inside
 
 ```sh
-git clone https://github.com/leoelicos/bcs-14-tech-blog.git
+git clone https://github.com/leoelicos/submitted.git
 
-cd bcs-14-tech-blog
+cd submitted
 ```
 
 ### 2. Rename `.env.EXAMPLE` to `.env`

@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * models/index.js
  * This script contains the necessary code to define the relational database for techblog_db
  * Copyright 2022 Leo Wong

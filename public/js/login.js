@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * login.js
  * This script contains the necessary code to allow user to log in, or a new user to sign up
  * Adapted from BCS resources 2022

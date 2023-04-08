@@ -1,5 +1,5 @@
 /*
- * Tech Blog
+ * Submitted
  * controllers/api/commentRoutes.js
  * This script contains the necessary code to implement the /api/comment routes
  * Copyright 2022 Leo Wong
