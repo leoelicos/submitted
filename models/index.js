@@ -5,12 +5,12 @@
  * Copyright 2022 Leo Wong
  */
 
-const User = require('./User');
-const Blog = require('./Blog');
-const Comment = require('./Comment');
-const Tag = require('./Tag');
-const Category = require('./Category');
-const BlogTag = require('./BlogTag');
+import User from './User.js';
+import Blog from './Blog.js';
+import Comment from './Comment.js';
+import Tag from './Tag.js';
+import Category from './Category.js';
+import BlogTag from './BlogTag.js';
 
 User.hasMany(Blog, {
   foreignKey: 'user_id',
@@ -46,4 +46,4 @@ Comment.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Blog, Comment, Tag, Category, BlogTag };
+export { User, Blog, Comment, Tag, Category, BlogTag };

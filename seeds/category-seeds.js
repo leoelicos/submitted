@@ -5,7 +5,7 @@
  * Copyright 2022 Leo Wong
  */
 
-const { Category } = require('../models');
+import { Category } from '../models/index.js';
 
 const categoryData = [
   {
@@ -24,4 +24,4 @@ const categoryData = [
 
 const seedCategories = () => Category.bulkCreate(categoryData);
 
-module.exports = seedCategories;
+export default seedCategories;

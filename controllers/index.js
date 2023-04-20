@@ -5,12 +5,13 @@
  * Copyright 2022 Leo Wong
  */
 
-const router = require('express').Router();
+import express from 'express';
+import apiRoutes from './api/index.js';
+import homeRoutes from './homeRoutes.js';
 
-const apiRoutes = require('./api');
-const homeRoutes = require('./homeRoutes');
+const router = express.Router();
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
-module.exports = router;
+export default router;

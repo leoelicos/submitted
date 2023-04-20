@@ -5,7 +5,7 @@
  * Copyright 2022 Leo Wong
  */
 
-const { User } = require('../models');
+import { User } from '../models/index.js';
 
 const userData = [
   {
@@ -76,4 +76,4 @@ const seedUsers = () =>
     returning: true,
   });
 
-module.exports = seedUsers;
+export default seedUsers;

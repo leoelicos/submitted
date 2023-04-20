@@ -4,31 +4,36 @@
  * This script contains the necessary code to initiate the application
  * Copyright 2022 Leo Wong
  */
-require('dotenv').config();
-
-// import utility for working with file and directory paths
-const path = require('path');
+import dotenv from 'dotenv';
 
 // import server framework for Node.js
-const express = require('express');
+import express from 'express';
 
 // import session middleware for Expresss
-const session = require('express-session');
+import session from 'express-session';
 
 // import templating engine to keep view and controller separated
-const exphbs = require('express-handlebars');
+import exphbs from 'express-handlebars';
 
 // import controller logic
-const routes = require('./controllers');
+import routes from './controllers/index.js';
 
 // import ORM that facilitates MySQL relational database
-const sequelize = require('./config/connection');
+import sequelize from './config/connection.js';
 
 // import helper utilities
-const helpers = require('./utils/helpers');
+import helpers from './utils/helpers.js';
 
 // import session store for connect-session using sequelize
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+import connectSessionSequelize from 'connect-session-sequelize';
+
+// import utilities for working with file and directory paths
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+dotenv.config();
+
+const SequelizeStore = connectSessionSequelize(session.Store);
 
 // assign variable app for readability
 const app = express();
@@ -81,6 +86,8 @@ const init = () => {
   app.use(express.urlencoded({ extended: true }));
 
   // implement middleware that serves static files
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
   app.use(express.static(path.join(__dirname, 'public')));
 
   // implement middleware that serves custom routes

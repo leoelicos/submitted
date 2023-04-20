@@ -5,8 +5,10 @@
  * Copyright 2022 Leo Wong
  */
 
-const router = require('express').Router();
-const { Category, Blog } = require('../../models');
+import express from 'express';
+import { Category } from '../../models/index.js';
+
+const router = express.Router();
 
 // The `/api/categories` endpoint
 
@@ -86,4 +88,4 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

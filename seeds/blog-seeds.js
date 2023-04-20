@@ -5,7 +5,7 @@
  * Copyright 2022 Leo Wong
  */
 
-const { Blog } = require('../models');
+import { Blog } from '../models/index.js';
 
 const blogData = [
   {
@@ -138,4 +138,4 @@ const blogData = [
 
 const seedBlogs = () => Blog.bulkCreate(blogData);
 
-module.exports = seedBlogs;
+export default seedBlogs;

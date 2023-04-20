@@ -6,13 +6,15 @@
  */
 
 // import express router
-const router = require('express').Router();
+import express from 'express';
 
 // import models required in blog routes
-const { Blog, Comment, BlogTag } = require('../../models');
+import { Blog, Comment, BlogTag } from '../../models/index.js';
 
 // import custom middleware to redirect users if they are not logged in
-const withAuth = require('../../utils/auth');
+import withAuth from '../../utils/auth.js';
+
+const router = express.Router();
 
 // define HTTP Response Status Codes
 const OK = 200;
@@ -170,4 +172,4 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

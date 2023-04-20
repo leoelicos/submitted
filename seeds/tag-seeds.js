@@ -5,7 +5,7 @@
  * Copyright 2022 Leo Wong
  */
 
-const { Tag } = require('../models');
+import { Tag } from '../models/index.js';
 
 const tagData = [
   { tag_name: 'CSS' },
@@ -28,4 +28,4 @@ const tagData = [
 
 const seedTags = () => Tag.bulkCreate(tagData);
 
-module.exports = seedTags;
+export default seedTags;

@@ -5,8 +5,10 @@
  * Copyright 2022 2U
  */
 
-const router = require('express').Router();
-const { User } = require('../../models');
+import express from 'express';
+import { User } from '../../models/index.js';
+
+const router = express.Router();
 
 router.get('/', async (req, res) => {
   // find all users
@@ -90,4 +92,4 @@ router.post('/logout', (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

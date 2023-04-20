@@ -5,14 +5,14 @@
  * Copyright 2022 Leo Wong
  */
 
-const seedBlogs = require('./blog-seeds');
-const seedBlogTags = require('./blog-tag-seeds');
-const seedCategories = require('./category-seeds');
-const seedComments = require('./comment-seeds');
-const seedTags = require('./tag-seeds');
-const seedUsers = require('./user-seeds');
+import seedBlogs from './blog-seeds.js';
+import seedBlogTags from './blog-tag-seeds.js';
+import seedCategories from './category-seeds.js';
+import seedComments from './comment-seeds.js';
+import seedTags from './tag-seeds.js';
+import seedUsers from './user-seeds.js';
 
-const sequelize = require('../config/connection');
+import sequelize from '../config/connection.js';
 
 const seedAll = async () => {
   // sync database

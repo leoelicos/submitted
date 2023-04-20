@@ -5,7 +5,7 @@
  * Copyright 2022 Leo Wong
  */
 
-module.exports = {
+export default {
   format_date: (date) => {
     const options = {
       weekday: 'long',

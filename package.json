@@ -1,5 +1,6 @@
 {
   "name": "submitted",
+  "type": "module",
   "version": "1.0.0",
   "description": "A CMS-style blog site where users can post articles",
   "main": "server.js",

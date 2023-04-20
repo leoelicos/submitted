@@ -5,8 +5,10 @@
  * Copyright 2022 Leo Wong
  */
 
-const router = require('express').Router();
-const { Tag, Blog, BlogTag } = require('../../models');
+import express from 'express';
+import { Tag, Blog, BlogTag } from '../../models/index.js';
+
+const router = express.Router();
 
 // The `/api/tags` endpoint
 
@@ -138,4 +140,4 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

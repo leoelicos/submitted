@@ -5,13 +5,15 @@
  * Copyright 2022 Leo Wong
  */
 
-const router = require('express').Router();
-const blogRoutes = require('./blogRoutes');
-const blogTagRoutes = require('./blogTagRoutes');
-const categoryRoutes = require('./categoryRoutes');
-const commentRoutes = require('./commentRoutes');
-const tagRoutes = require('./tagRoutes');
-const userRoutes = require('./userRoutes');
+import express from 'express';
+import blogRoutes from './blogRoutes.js';
+import blogTagRoutes from './blogTagRoutes.js';
+import categoryRoutes from './categoryRoutes.js';
+import commentRoutes from './commentRoutes.js';
+import tagRoutes from './tagRoutes.js';
+import userRoutes from './userRoutes.js';
+
+const router = express.Router();
 
 router.use('/blog', blogRoutes);
 router.use('/blogtag', blogTagRoutes);
@@ -20,4 +22,4 @@ router.use('/comment', commentRoutes);
 router.use('/tag', tagRoutes);
 router.use('/user', userRoutes);
 
-module.exports = router;
+export default router;

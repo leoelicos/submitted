@@ -5,9 +5,18 @@
  * Copyright 2022 Leo Wong
  */
 
-const router = require('express').Router();
-const { Blog, BlogTag, Category, Comment, Tag, User } = require('../models');
-const withAuth = require('../utils/auth');
+import express from 'express';
+import {
+  Blog,
+  BlogTag,
+  Category,
+  Comment,
+  Tag,
+  User,
+} from '../models/index.js';
+import withAuth from '../utils/auth.js';
+
+const router = express.Router();
 
 const getBlogTags = async (blogId) =>
   BlogTag.findAll({
@@ -186,4 +195,4 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-module.exports = router;
+export default router;

@@ -6,10 +6,12 @@
  */
 
 // import express router
-const router = require('express').Router();
+import express from 'express';
 
 // import model required in blogTag routes
-const { BlogTag } = require('../../models');
+import { BlogTag } from '../../models/index.js';
+
+const router = express.Router();
 
 // define HTTP Response Status Codes
 const OK = 200;
@@ -115,4 +117,4 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

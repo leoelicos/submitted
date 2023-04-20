@@ -4,7 +4,8 @@
  * This script contains the seeds for the Comment entity
  * Copyright 2022 Leo Wong
  */
-const { Comment } = require('../models');
+
+import { Comment } from '../models/index.js';
 
 const commentData = [
   {
@@ -86,4 +87,4 @@ const commentData = [
 
 const seedComments = () => Comment.bulkCreate(commentData);
 
-module.exports = seedComments;
+export default seedComments;

@@ -5,7 +5,7 @@
  * Copyright 2022 Leo Wong
  */
 
-const { BlogTag } = require('../models');
+import { BlogTag } from '../models/index.js';
 
 const blogTagData = [
   { blog_id: 1, tag_id: 3 },
@@ -33,4 +33,4 @@ const blogTagData = [
 
 const seedBlogTags = () => BlogTag.bulkCreate(blogTagData);
 
-module.exports = seedBlogTags;
+export default seedBlogTags;
