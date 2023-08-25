@@ -1,6 +1,6 @@
 # submitted
 
-![express](https://img.shields.io/badge/4.18.1-0?label=Express&style=for-the-badge&labelColor=white&color=black) ![express-handlebars](https://img.shields.io/badge/6.0.6-0?label=express-handlebars&style=for-the-badge&labelColor=white&color=black) ![express-session](https://img.shields.io/badge/1.17.3-0?label=express-session&style=for-the-badge&labelColor=white&color=black) ![sequelize](https://img.shields.io/badge/6.20.1-0?label=Sequelize&style=for-the-badge&labelColor=white&color=black) ![mysql2](https://img.shields.io/badge/2.3.3-0?label=mysql2&style=for-the-badge&labelColor=white&color=black)
+![express](https://img.shields.io/badge/4.18.1-0?label=Express&style=for-the-badge&labelColor=white&color=black) ![express-handlebars](https://img.shields.io/badge/6.0.6-0?label=express-handlebars&style=for-the-badge&labelColor=white&color=black) ![sequelize](https://img.shields.io/badge/6.20.1-0?label=Sequelize&style=for-the-badge&labelColor=white&color=black) ![mysql2](https://img.shields.io/badge/2.3.3-0?label=mysql2&style=for-the-badge&labelColor=white&color=black)
 
 ---
 
