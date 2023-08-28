@@ -4,10 +4,9 @@
 
 ---
 
-## Description
+## why 
 
-submitted is a full stack application that allows
-logged-in contributors to view Blogs, create Blogs, edit and delete their own Blogs, comment on other contributor's blogs.
+Read and create blogs.
 
 This application uses npm packages `express`, `express-handlebars`, `express-session`, `sequelize`, `connection-session-sequelize`, `bcrypt`, `mysql2` and `dotenv`.
 
