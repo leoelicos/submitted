@@ -1,0 +1,10 @@
+@layer reset, tokens, base, layout, components, utilities, motion;
+
+@import '@fontsource-variable/fraunces/soft.css';
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/jetbrains-mono/wght.css';
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import './motion.css';

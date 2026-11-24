@@ -1,43 +1,63 @@
 {
   "name": "submitted",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "A CMS-style blog site where users can post articles",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "seed": "node seeds/"
-  },
+  "version": "2.0.0",
+  "private": true,
+  "description": "Submitted! The bootcamp student blog. Full-stack React Router + Postgres, accessible by default.",
+  "license": "MIT",
+  "author": "Leo Wong <leoelicos@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leoelicos/submitted.git"
   },
-  "keywords": [
-    "MVC",
-    "Handlebars.js",
-    "Sequelize",
-    "Express.js",
-    "Node.js"
-  ],
-  "author": "Leo Wong",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/leoelicos/submitted/issues"
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test"
   },
-  "homepage": "https://github.com/leoelicos/submitted#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.1",
-    "express-handlebars": "^6.0.6",
-    "express-session": "^1.17.3",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.16",
-    "sequelize": "^6.20.1"
+    "@electric-sql/pglite": "^0.6.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@react-router/node": "^8.5.2",
+    "@react-router/serve": "^8.5.2",
+    "drizzle-orm": "^0.45.4",
+    "isbot": "^5.2.3",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.2",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "eslint": "^8.16.0",
-    "prettier": "^2.6.2"
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "@react-router/dev": "^8.5.2",
+    "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "drizzle-kit": "^0.31.11",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0",
+    "tsx": "^4.23.15",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

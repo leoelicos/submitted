@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .p{stroke:#0a6a3a}.b{fill:#f7f4ec}
+    @media (prefers-color-scheme: dark){.p{stroke:#34c776}.b{fill:#0b0d0c}}
+  </style>
+  <rect class="p b" x="4" y="3" width="20" height="26" rx="3" stroke-width="2.6"/>
+  <path class="p" d="M9 10h10M9 15h6" stroke-width="2.6"/>
+  <circle cx="23" cy="22" r="6.5" fill="#b3261e"/>
+  <path d="m20.2 22 2 2 3.8-4" stroke="#fff" stroke-width="2.4"/>
+</svg>
