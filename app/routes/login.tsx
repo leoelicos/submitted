@@ -92,6 +92,7 @@ export default function Login({ loaderData, actionData }: Route.ComponentProps) 
           {demoUser ? (
             <p className="demo-hint">
               Demo mode: try <code>{demoUser}</code> with password <code>{DEMO_PASSWORD}</code>.
+              Demo data resets whenever the server restarts.
             </p>
           ) : null}
           <Form method="post" className="form" noValidate aria-busy={submitting || undefined}>

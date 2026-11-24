@@ -13,3 +13,7 @@
 /playwright-report/
 /lighthouse/
 *.tsbuildinfo
+# Vercel
+.vercel
+.env*
+!.env.example

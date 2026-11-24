@@ -116,7 +116,7 @@ Any Node 22.22+ host works: `npm run build && npm start`.
 
 **Demo mode**: with no `DATABASE_URL` the server boots an in-memory PGlite seeded with the original posts. Great for previews; data resets whenever the instance restarts.
 
-**Vercel**: Vercel detects React Router and deploys it zero-config. Its optional `@vercel/react-router` preset does not support React Router 8 yet ([vercel/vercel#16730](https://github.com/vercel/vercel/issues/16730)), so it isn't installed; add it once that ships.
+**Vercel**: the `submitted` project (team `leoelicos-projects`) is connected to this repo and deploys with Vercel's zero-config React Router support: every PR gets a preview and `main` goes to production. Vercel's optional `@vercel/react-router` preset doesn't support React Router 8 yet ([vercel/vercel#16730](https://github.com/vercel/vercel/issues/16730)), so the build logs a "preset not detected" warning. That only skips per-route function config. `SESSION_SECRET` is set for Production and Preview. Until `DATABASE_URL` is added, deployments run in demo mode, and because functions are serverless, each instance has its own in-memory database: sign-ups and new posts are ephemeral and may not be visible from another instance.
 
 ## Project layout
 
