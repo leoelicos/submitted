@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Submitted! · design tokens
+   Ruled-notebook paper by day, terminal-black by night (the 2022 original was
+   black + #2ab865 green, so dark mode keeps that DNA).
+
+   Every text/background pair below is asserted in tests/unit/contrast.test.ts:
+   body + muted text >= 7:1 (AAA), accents >= 4.5:1 (AA), UI/focus >= 3:1.
+   Format must stay `--name: light-dark(#light, #dark);` for that test.
+   ========================================================================== */
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+
+    --paper: light-dark(#f7f4ec, #0b0d0c);
+    --surface: light-dark(#fffdf8, #131715);
+    --surface-2: light-dark(#efeadd, #1a1f1c);
+    --ink: light-dark(#141714, #edf2ee);
+    --muted: light-dark(#4b524d, #a7b3ab);
+    --line: light-dark(#d6cfbf, #2b332e);
+    --line-strong: light-dark(#7d7766, #6b776f);
+
+    --brand: light-dark(#0a6a3a, #34c776);
+    --brand-ink: light-dark(#fffdf8, #04140b);
+    --brand-soft: light-dark(#d9eedf, #10291b);
+
+    --stamp: light-dark(#b3261e, #ff7b6e);
+    --stamp-soft: light-dark(#f7dcd8, #3a1714);
+    --highlight: light-dark(#ffe36e, #4a3d00);
+    --focus: light-dark(#1d3fcc, #ffd23f);
+    --rule: light-dark(#c9dbe8, #17231d);
+
+    --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --font-sans:
+      'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono:
+      'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+    --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+    --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem);
+    --step-2: clamp(1.45rem, 1.25rem + 1vw, 2rem);
+    --step-3: clamp(1.9rem, 1.5rem + 2vw, 3rem);
+    --step-4: clamp(2.6rem, 1.8rem + 4.2vw, 5.5rem);
+    --step-5: clamp(3.4rem, 2rem + 8vw, 9.5rem);
+
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-s: 0.75rem;
+    --space-m: 1rem;
+    --space-l: 1.5rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 4rem;
+    --gutter: clamp(1rem, 4vw, 2.5rem);
+    --maxw: 76rem;
+    --measure: 68ch;
+
+    --radius-s: 6px;
+    --radius-m: 12px;
+    --radius-l: 20px;
+    --header-h: 4.25rem;
+
+    --shadow-1: 0 1px 0 color-mix(in oklab, var(--ink) 8%, transparent);
+    --shadow-2:
+      0 1px 2px color-mix(in oklab, var(--ink) 10%, transparent),
+      0 12px 32px -12px color-mix(in oklab, var(--ink) 28%, transparent);
+
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-spring: linear(
+      0,
+      0.009,
+      0.035 2.1%,
+      0.141,
+      0.281 6.7%,
+      0.723 12.9%,
+      0.938 16.7%,
+      1.017,
+      1.077,
+      1.121,
+      1.149 24.3%,
+      1.159,
+      1.163,
+      1.161,
+      1.154 29.9%,
+      1.129 32.8%,
+      1.051 39.6%,
+      1.017 43.1%,
+      0.991,
+      0.977 51%,
+      0.974 53.8%,
+      0.975 57.1%,
+      0.997 69.8%,
+      1.003 76.9%,
+      1
+    );
+  }
+
+  :root[data-theme='light'] {
+    color-scheme: light;
+  }
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+  }
+}
